@@ -19,6 +19,10 @@ run --color
 
 Otherwise you will get a chance to add in arguments after selecting the script to run
 
+You can also run dependencies executables:
+
+![](https://user-images.githubusercontent.com/516342/69226314-9e72c180-0b88-11ea-8fc2-fd5ff3aac71f.gif)
+
 ### aliases
 
 run, lets-run
