@@ -1,60 +1,33 @@
 #!/usr/bin/env node
 
 const { resolve } = require('path');
-const { prompt } = require('inquirer');
 const exec = require('async-execute');
 const exist = require('@does/exist');
 require('colors');
+
+const getCommand = require('./lib/getCommand');
+const getArgs = require('./lib/getArgs');
 
 const { argv: [ , , ...rest ] } = process;
 process.on('unhandledRejection', console.error);
 
 (async() => {
-	const path = resolve('.', 'package.json');
+	const path = resolve('package.json');
 
 	if (!(await exist(path))) {
-		console.log(`Could not find package.json file at ${path.yellow}.`.red.bold);
+		console.warn(`Could not find package.json file at ${path.yellow}.`.red.bold);
 		return;
 	}
 
-	const { scripts } = require(path);
+	const command = await getCommand(require(path));
+	const args = await getArgs(rest);
 
-	if (!scripts) {
-		console.log('There are no scripts in this package.json file.'.bold);
-		return;
-	}
-
-	const choices = Object.entries(scripts).map(
-		([value, content]) => ({
-			name: `${value.yellow.bold}: ${content}`,
-			value,
-		}),
-	);
-
-	const { script } = await prompt([{
-		name: 'script',
-		message: 'Select script to run',
-		type: 'list',
-		pageSize: '20',
-		choices,
-	}]);
-
-	let args = rest.filter(Boolean).join(' ');
-
-	args || ({ args } = await prompt([{
-		name: 'args',
-		message: '[optional] args string',
-		type: 'input',
-	}]));
-
-	const command = [
-		'npm',
-		'run',
-		`"${script}"`,
-		args ? '--' : '',
+	const cmd = [
+		command,
+		args && !command.startsWith('/') ? '--' : '',
 		args,
 	].filter(Boolean).join(' ');
 
-	console.log(`Executing: ${command.bold}`);
-	await exec(command, {pipe: true, exit: true});
+	console.log(`Executing: ${cmd.bold}`);
+	await exec(cmd, {pipe: true, exit: true});
 })();
