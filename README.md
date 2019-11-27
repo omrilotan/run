@@ -51,7 +51,7 @@ Otherwise you will get a chance to add in arguments after selecting the script t
   "name": "package",
   "version": "1.0.0",
   "scripts": {
-    "start": "run",
+    "start": "run --color",
     "build": "...",
     "test": "..."
   },

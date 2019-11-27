@@ -1,6 +1,6 @@
 {
   "name": "@lets/run",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "👟 run npm scripts interactively",
   "keywords": [
     "npm",
@@ -26,7 +26,8 @@
     "lint": "eslint '**/*.js'",
     "say something": "echo \"Hey, buddy!\"",
     "self": "run",
-    "start": "./bin.js"
+    "start": "./bin.js",
+    "test": "mocha '**/spec.js' --recursive --exclude 'node_modules'"
   },
   "scripts:descriptions": {
     "#": "Comment",
@@ -41,7 +42,9 @@
   },
   "devDependencies": {
     "@omrilotan/eslint-config": "^1.1.0",
+    "chai": "^4.2.0",
     "eslint": "^6.6.0",
-    "eslint-plugin-log": "^1.2.3"
+    "eslint-plugin-log": "^1.2.3",
+    "mocha": "^6.2.2"
   }
 }
