@@ -25,16 +25,19 @@ Otherwise you will get a chance to add in arguments after selecting the script t
 
 ## Create descriptive entries using package.json property: `scripts:descriptions`
 
+> You can hide scripts by explicitly setting the description to null
 ```json
 {
   "name": "package",
   "version": "1.0.0",
   "scripts": {
     "lint": "eslint '**/*.js'",
+    "prestart": "echo \"prepare things\"",
     "start": "./bin.js"
   },
   "scripts:descriptions": {
-    "lint": "Check code syntax"
+    "lint": "Check code syntax",
+    "prestart": null
   }
 }
 ```
@@ -51,6 +54,9 @@ Otherwise you will get a chance to add in arguments after selecting the script t
     "start": "run",
     "build": "...",
     "test": "..."
+  },
+  "scripts:descriptions": {
+    "build": "Prepare application files"
   },
   "devDependencies": {
     "@lets/run": "latest"
