@@ -27,7 +27,8 @@ Otherwise you will get a chance to add in arguments after selecting the script t
 
 ```json
 {
-	...
+  "name": "package",
+  "version": "1.0.0",
   "scripts": {
     "lint": "eslint '**/*.js'",
     "start": "./bin.js"
@@ -35,11 +36,27 @@ Otherwise you will get a chance to add in arguments after selecting the script t
   "scripts:descriptions": {
     "lint": "Check code syntax"
   }
-  ...
 }
 ```
 
 ![](https://user-images.githubusercontent.com/516342/69716427-a4314f80-1112-11ea-957f-3385b9e0155a.png)
+
+## Replace `npm start`
+
+```json
+{
+  "name": "package",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "run",
+    "build": "...",
+    "test": "..."
+  },
+  "devDependencies": {
+    "@lets/run": "latest"
+  }
+}
+```
 
 ### aliases
 

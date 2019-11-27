@@ -1,6 +1,6 @@
 {
   "name": "@lets/run",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "👟 run npm scripts interactively",
   "keywords": [
     "npm",
@@ -21,8 +21,9 @@
     "run": "bin.js"
   },
   "scripts": {
-    "lint": "eslint '**/*.js'",
-    "start": "./bin.js"
+    "start": "./bin.js",
+    "self": "run",
+    "lint": "eslint '**/*.js'"
   },
   "scripts:descriptions": {
     "lint": "Check code syntax",
