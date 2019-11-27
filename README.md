@@ -7,21 +7,39 @@
 $ npm i -g @lets/run
 ```
 
-Simply run. You'll get an interactive menu.
+## Simply run. You'll get an interactive menu.
 ```
 $ run
 ```
 
-Pass arguments. Arguments will be forwarded to the selected script
+## Pass arguments. Arguments will be forwarded to the selected script
 ```
 run --color
 ```
 
 Otherwise you will get a chance to add in arguments after selecting the script to run
 
-You can also run dependencies executables:
+## You can also run dependencies executables:
 
 ![](https://user-images.githubusercontent.com/516342/69226314-9e72c180-0b88-11ea-8fc2-fd5ff3aac71f.gif)
+
+## Create descriptive entries using package.json property: `scripts:descriptions`
+
+```json
+{
+	...
+  "scripts": {
+    "lint": "eslint '**/*.js'",
+    "start": "./bin.js"
+  },
+  "scripts:descriptions": {
+    "lint": "Check code syntax"
+  }
+  ...
+}
+```
+
+![](https://user-images.githubusercontent.com/516342/69716427-a4314f80-1112-11ea-957f-3385b9e0155a.png)
 
 ### aliases
 
