@@ -27,7 +27,9 @@
     "say something": "echo \"Hey, buddy!\"",
     "self": "run",
     "start": "./bin.js",
-    "test": "mocha '**/spec.js' --recursive --exclude 'node_modules'"
+    "test": "mocha '**/spec.js' --recursive --exclude 'node_modules'",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "scripts:descriptions": {
     "#": "Comment",
@@ -38,7 +40,8 @@
     "@does/exist": "^1.1.0",
     "async-execute": "^1.1.0",
     "colors": "^1.4.0",
-    "inquirer": "^7.0.1"
+    "inquirer": "^7.0.1",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@omrilotan/eslint-config": "^1.1.0",
@@ -46,5 +49,6 @@
     "eslint": "^6.8.0",
     "eslint-plugin-log": "^1.2.3",
     "mocha": "^6.2.2"
-  }
+  },
+  "snyk": true
 }
