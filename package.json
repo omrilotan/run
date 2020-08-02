@@ -36,15 +36,15 @@
   },
   "dependencies": {
     "@does/exist": "^1.1.0",
-    "async-execute": "^1.1.0",
+    "async-execute": "^1.2.0",
     "colors": "^1.4.0",
-    "inquirer": "^7.0.1"
+    "inquirer": "^7.3.3"
   },
   "devDependencies": {
     "@omrilotan/eslint-config": "^1.1.0",
     "chai": "^4.2.0",
-    "eslint": "^6.8.0",
+    "eslint": "^7.6.0",
     "eslint-plugin-log": "^1.2.3",
-    "mocha": "^6.2.2"
+    "mocha": "^8.1.0"
   }
 }
