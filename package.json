@@ -38,7 +38,7 @@
     "@does/exist": "^1.1.0",
     "async-execute": "^1.2.0",
     "colors": "^1.4.0",
-    "inquirer": "^7.3.3"
+    "inquirer": "^8.2.0"
   },
   "devDependencies": {
     "@omrilotan/eslint-config": "^1.1.0",
